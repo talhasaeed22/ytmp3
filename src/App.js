@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import './App.css';
-// import header from './Images/header.jpg'
+import Spinner from './Images/Spinner.gif'
 import youtube from './Images/youtube.png'
 function App() {
+  const [loading, setLoading] = useState('false')
   const [cred, setCred] = useState({link:"", title:"" })
   const [id, setId] = useState(null)
   const handleInput = async (e) => {
+    setLoading('true');
     e.preventDefault();
     const givenID = id.videoID;
-    console.log(id.videoID)
     const fetchAPI = await fetch(`https://youtube-mp36.p.rapidapi.com/dl?id=${givenID}`, {
       "method": "GET",
       "headers": {
@@ -18,6 +19,7 @@ function App() {
     });
 
     const apiResponse = await fetchAPI.json();
+    setLoading('false');
     setCred({link:apiResponse.link, title:apiResponse.title})
     document.getElementById('link').style.display = 'flex';
   }
@@ -38,7 +40,7 @@ function App() {
         </form>
       </div>
 
-      <div className="bottom-container container" id='link' style={{display:'none'}}>
+      {loading === 'true'? <img style={{display:'block', margin:'12px auto', width:'300px'}} src={Spinner} alt="Loading" /> :<div style={{display:'none'}} className="bottom-container container" id='link' >
         <div className="card"  style={{width:'28rem', color:'black', border:'1.5px solid blue', borderRadius:'23px'}} >
           <img src={youtube} style={{width:'26%', display:'block', margin:'auto'}} className="card-img-top" alt="..." />
           <div className="card-body">
@@ -46,7 +48,7 @@ function App() {
             <a href={cred.link} id='download-btn' className="btn btn-primary">Download Here!</a>
           </div>
         </div>
-      </div>
+      </div> }
 
     </>
   );
