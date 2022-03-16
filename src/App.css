@@ -71,13 +71,11 @@ body{
 }
 
 .errors{
-  width: 400px;
-  margin: auto;
+  margin:23px;
   display: flex;
   justify-content: center;
   align-items:center;
   flex-direction: column;
-  gap: 10px;
   border-radius: 5px;
   padding: 12px;
   color: red;
