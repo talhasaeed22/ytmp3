@@ -18,7 +18,6 @@ function App() {
     });
 
     const apiResponse = await fetchAPI.json();
-    console.log(apiResponse)
     setCred({link:apiResponse.link, title:apiResponse.title})
     document.getElementById('link').style.display = 'flex';
   }
