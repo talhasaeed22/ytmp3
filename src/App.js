@@ -50,7 +50,7 @@ function App() {
 
         <form action="" id='form'>
           <h1>YouTube 2 MP3 Converter</h1>
-          <label htmlFor="videoID">Enter Video Link</label> <br />
+          <label style={{fontSize:'1.2rem'}} htmlFor="videoID">Enter Video Link</label> <br />
           <div >
             <input className='inp' type="text" name="videoID" id="videoID" onChange={onChange} />
             <button type="submit" onClick={handleInput} id='convert-btn'>Submit</button>

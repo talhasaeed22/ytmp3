@@ -9,6 +9,7 @@ body{
   color: white;
   overflow: hidden;
   font-family: 'Orbitron', sans-serif;
+ 
 }
 
 .top-container{
@@ -25,7 +26,7 @@ body{
 
 #form{
   width: 600px;
-  height: 40vh;
+  height: 43vh;
   margin: auto;
   display: flex;
   justify-content: flex-end;
