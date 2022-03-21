@@ -58,8 +58,8 @@ function App() {
         </form>
       </div>
 
-      {error === 'true'? <div className='errors'> Please Enter Valid YouTube link </div> : (loading === 'true'? <img style={{display:'block', margin:'12px auto', width:'300px'}} src={Spinner} alt="Loading" /> :<div style={{display:'none'}} className="bottom-container container" id='link' >
-        <div className="card"  style={{width:'28rem', color:'black', border:'1.5px solid blue', borderRadius:'23px'}} >
+      {error === 'true'? <div style={{marginTop:'38px'}} className='errors'> Please Enter Valid YouTube link </div> : (loading === 'true'? <img style={{display:'block', margin:'28px auto', width:'300px'}} src={Spinner} alt="Loading" /> :<div style={{display:'none'}} className="bottom-container container" id='link' >
+        <div className="card"  style={{width:'28rem', color:'black', border:'1.5px solid blue', borderRadius:'23px', marginTop:'28px'}} >
           <img src={youtube} style={{width:'26%', display:'block', margin:'auto'}} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{cred.title}</h5>
